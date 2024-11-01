@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
   return (
@@ -10,9 +11,12 @@ const Home: React.FC = () => {
         <p className="text-lg mb-4 text-gray-700">
           Explora mis proyectos y conoce más sobre mí.
         </p>
-        <a href="about" className="text-blue-500 underline">
+        <Link
+          to="/about"
+          className="hover:text-gray-400 text-blue-500 underline"
+        >
           Saber más sobre mí
-        </a>
+        </Link>
       </div>
     </div>
   );
