@@ -1,22 +1,24 @@
-<!doctype html>
-<html lang="en">
+---
+import LanguagePicker from "../components/LanguagePicker.astro";
+import Nav from "../components/Nav.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import "../styles/global.css";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<html lang={lang}>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Luis Gutierrez portafolio</title>
+    <meta name="viewport" content="width=device-width" />
+    <title>{t("layout.title")}</title>
   </head>
   <body>
     <slot />
+    <footer class="flex absolute bottom-0 w-full">
+      <LanguagePicker />
+    </footer>
   </body>
 </html>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>
