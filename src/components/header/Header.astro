@@ -1,0 +1,65 @@
+---
+import "./header.css";
+const { origin } = Astro.props;
+import Logo from "../Logo.astro";
+
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { ui, languages } from "../../i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<header class="header">
+  <div class="header__container">
+    <Logo />
+    <nav class="links" tabindex="0.1">
+      <button class="menu__btn">{t("header.menu")}</button>
+      <ul class="header__list">
+        {
+          origin.map((data: { title: any; icon: unknown }) => (
+            <li>
+              <a
+                class="menu__link"
+                href={`#${t(
+                  `header.${data.title}` as keyof (typeof ui)[typeof lang]
+                )}`}
+              >
+                <span class="icon__container">
+                  <iconify-icon
+                    class="icons"
+                    icon={data.icon}
+                    width="20"
+                    height="20"
+                  />
+                  {t(`header.${data.title}` as keyof (typeof ui)[typeof lang])}
+                </span>
+              </a>
+            </li>
+          ))
+        }
+        {
+          (
+            <div class="relative group">
+              <button class="bg-gray-800 text-white px-4 py-2 rounded-md focus:outline-none">
+                {t("header.languages")}
+              </button>
+              <ul class="absolute left-0 hidden group-hover:block group-focus-within:block mt-2 space-y-2 bg-gray-200 rounded-md shadow-lg w-48">
+                {Object.entries(languages).map(([code, language]) => (
+                  <li>
+                    <a
+                      class="block px-4 py-2 text-gray-800 hover:bg-blue-100 "
+                      href={`/${code}/`}
+                    >
+                      {language}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

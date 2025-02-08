@@ -1,0 +1,16 @@
+---
+import Title from '../atoms/Title.astro';
+import SkillsOnTerminal from './components/skills-on-terminal/skillsOnTerminal.astro';
+import './skills.css';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="skills">
+	<SkillsOnTerminal />
+	<div class="text-content">
+		<Title contenido={t('skills.title')} />
+		<p>{t('skills.description')}</p>
+	</div>
+</section>

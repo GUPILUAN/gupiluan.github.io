@@ -1,0 +1,26 @@
+---
+import "./hero.css";
+import Boton from "../atoms/Boton.astro";
+import { myInfo } from "../../i18n/ui";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import "./src/styles/global.css";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id={t("header.home")} class="hero">
+  <div class="hero__container">
+    <div class="text__content">
+      <h1 class="hero__title color__gradiente">{myInfo.name}</h1>
+      <p class="hero__text">{t("hero.description")}</p>
+      <Boton href={`#${t("header.about")}`} texto={t("hero.button")} />
+    </div>
+    <img
+      class="hero__img"
+      src="https://avatars.githubusercontent.com/u/25595729?v=4"
+      alt={myInfo.name}
+      width="384"
+      height="384"
+    />
+  </div>
+</section>

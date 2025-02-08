@@ -1,1 +1,102 @@
 @import "tailwindcss";
+
+:root {
+  /* color */
+  --primary-0: #0a0a0a;
+  --primary-10: #1c1c1c;
+  --primary-20: #333333;
+  --primary-30: #4d4d4d;
+  --primary-40: #666666;
+  --primary-50: #808080;
+  --primary-60: #999999;
+  --primary-70: #b3b3b3;
+  --primary-80: #cccccc;
+  --primary-90: #e6e6e6;
+  --primary-95: #f2f2f2;
+  --primary-99: #f9f9f9;
+  --primary-100: #ffffff;
+  --secondary-0: #1a0a0a;
+  --secondary-10: #2d0e0e;
+  --secondary-20: #472323;
+  --secondary-30: #5a3131;
+  --secondary-40: #7f4c4c;
+  --secondary-50: #9b6666;
+  --secondary-60: #b38080;
+  --secondary-70: #cc9a9a;
+  --secondary-80: #e5b6b6;
+  --secondary-90: #f2d1d1;
+  --secondary-95: #f9e4e4;
+  --secondary-99: #fcf0f0;
+  --secondary-100: #ffffff;
+
+  /* colores de las propiedades */
+  --surface: #2d2d2d;
+  --surface-variant: #707070;
+  --surface-dim: #595959;
+  --surface-bridge: #8c8c8c;
+
+  --primary: var(--primary-60);
+  --on-surface-primary: var(--primary-10);
+  --on-primary: var(--primary-95);
+
+  --secndary: var(--secondary-70);
+  --on-surface-secondary: var(--secondary-95);
+  --on-secondary: var(--secondary-95);
+
+  /* texto */
+  --text-small: 1.2rem;
+  --text-medium: 1.4rem;
+  --text-large: 1.6rem;
+  --text-x-large: 2rem;
+  --text-xx-large: 3.1rem;
+  --text-xxx-large: 4.4rem;
+  --text-title: 2rem;
+  --text-general: 1.6rem;
+  --text-button: 1.2rem;
+  --font-montserrat: "Montserrat", sans-serif;
+  --max-width: 108rem;
+  --site-bg: var(--primary-0);
+  --hero-bg: linear-gradient(
+    -54deg,
+    var(--primary-0) -23%,
+    var(--primary-20),
+    var(--primary-0) 51%
+  );
+
+  --text-gradient: radial-gradient(
+    circle farthest-corner at center center,
+    #ffffff 0%,
+    #b3b3b3 100%
+  );
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: var(--font-montserrat) !important;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  width: 100%;
+  background: var(--site-bg) no-repeat;
+  background: var(--site-bg) no-repeat;
+}
+main {
+  align-self: center;
+}
+p {
+  color: var(--primary-100);
+  font-size: var(--text-general);
+}
+
+.color__gradiente {
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.max__width {
+  max-width: 117.8rem;
+}

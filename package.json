@@ -1,16 +1,34 @@
 {
-  "name": "portafolio-astro",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.0.3",
-    "astro": "^5.2.5",
-    "tailwindcss": "^4.0.3"
-  }
+	"name": "port",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@tailwindcss/vite": "^4.0.5",
+		"astro": "^5.2.5",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"main": "index.astro",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/GUPILUAN/gupiluan.github.io.git"
+	},
+	"keywords": [
+		"astro",
+		"frontend",
+		"portfolio",
+		"javascript",
+		"portafolio",
+		"css",
+		"tailwind"
+	],
+	"author": "GUPILUAN",
+	"license": "MIT"
 }
