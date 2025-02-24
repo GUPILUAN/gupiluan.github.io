@@ -41,17 +41,26 @@ const t = useTranslations(lang);
         {
           (
             <div class="relative group">
-              <button class="bg-gray-800 text-white px-4 py-2 rounded-md focus:outline-none">
+              <button
+                id="toggleBtn"
+                class="bg-gray-800 text-white px-4 py-2 rounded-md focus:outline-none cursor-pointer hover:bg-gray-300 transition"
+              >
                 {t("header.languages")}
               </button>
-              <ul class="absolute left-0 hidden group-hover:block group-focus-within:block mt-2 space-y-2 bg-gray-200 rounded-md shadow-lg w-48">
+              <ul
+                id="mensaje"
+                style="display: none;"
+                class="absolute left-0 hidden group-hover:block group-focus-within:block mt-2 space-y-2 bg-gray-200 rounded-md shadow-lg w-auto p-1"
+              >
                 {Object.entries(languages).map(([code, language]) => (
                   <li>
                     <a
-                      class="block px-4 py-2 text-gray-800 hover:bg-blue-100 "
+                      class="block px-4 py-2 text-gray-800 hover:bg-blue-100 border-b-1 border-gray-300"
                       href={`/${code}/`}
                     >
-                      {language}
+                      <span class="sm:hidden">{language.substring(0, 4)}</span>
+
+                      <span class="hidden sm:inline">{language}</span>
                     </a>
                   </li>
                 ))}
@@ -63,3 +72,10 @@ const t = useTranslations(lang);
     </nav>
   </div>
 </header>
+<script>
+  const toggleButton = document.getElementById("toggleBtn")!;
+  toggleButton.addEventListener("click", () => {
+    const mensaje = document.getElementById("mensaje")!;
+    mensaje.style.display = mensaje.style.display === "none" ? "block" : "none";
+  });
+</script>
