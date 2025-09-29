@@ -1,8 +1,8 @@
 ---
-import Title from "./atoms/Title.astro";
-import { getPortafolioData } from "./data/portfolioData.js";
-import Card from "./card-portfolio/CardPortfolio.astro";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import Title from "@components/atoms/Title.astro";
+import { getPortafolioData } from "@components/data/portfolioData.js";
+import Card from "@components/card-portfolio/CardPortfolio.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---

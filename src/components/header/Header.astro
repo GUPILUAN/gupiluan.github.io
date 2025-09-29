@@ -1,10 +1,10 @@
 ---
 import "./header.css";
 const { origin } = Astro.props;
-import Logo from "../Logo.astro";
+import Logo from "@components/Logo.astro";
 
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-import { ui, languages } from "../../i18n/ui";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import { ui, languages } from "@i18n/ui";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

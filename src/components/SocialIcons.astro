@@ -1,68 +1,64 @@
 ---
-import { getLangFromUrl } from '../i18n/utils';
+import { getLangFromUrl } from "@i18n/utils";
 
 const { width, height } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const socialLinks = [
-	{
-		title: 'LinkedIn',
-		icon: 'simple-icons:linkedin',
-		href: 'https://www.linkedin.com/in/luis-angel-gutierrez-pineda/',
-	},
-	{
-		title: 'Instagram',
-		icon: 'mdi:instagram',
-		href: 'https://www.instagram.com/gupiluan',
-	},
+  {
+    title: "LinkedIn",
+    icon: "simple-icons:linkedin",
+    href: "https://www.linkedin.com/in/luis-angel-gutierrez-pineda/",
+  },
+  {
+    title: "Instagram",
+    icon: "mdi:instagram",
+    href: "https://www.instagram.com/gupiluan",
+  },
 
-	{
-		title: 'CV',
-		icon: 'tabler:file-cv',
-		href: `../docs/CVLuis2025_${lang}.pdf`,
-	},
+  {
+    title: "CV",
+    icon: "tabler:file-cv",
+    href: `../docs/CV - SEP 25_${lang}.pdf`,
+  },
 ];
 ---
 
 <div class="icons__container">
-	{
-		socialLinks.map((data) => (
-			<a
-				href={data.href}
-				target="_blank"
-				rel="nofollow noreferrer noopener"
-			>
-				<iconify-icon
-					class={`skill__icon ${data.title}`}
-					icon={data.icon}
-					width={width}
-					height={height}
-				/>
-			</a>
-		))
-	}
+  {
+    socialLinks.map((data) => (
+      <a href={data.href} target="_blank" rel="nofollow noreferrer noopener">
+        <iconify-icon
+          class={`skill__icon ${data.title}`}
+          icon={data.icon}
+          width={width}
+          height={height}
+        />
+      </a>
+    ))
+  }
 </div>
 
 <style>
-	.icons__container {
-		display: flex;
-		width: 29.6rem;
-		/* padding: 1.3rem 4rem; */
-		justify-content: flex-start;
-		align-items: flex-start;
-		gap: 2rem;
-	}
-	.skill__icon {
-		color: #dcd8fc;
-	}
+  .icons__container {
+    display: flex;
+    width: 29.6rem;
+    /* padding: 1.3rem 4rem; */
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .skill__icon {
+    color: #dcd8fc;
+  }
 
-	.LinkedIn:hover {
-		color: #0e76a8;
-	}
-	.Instagram:hover {
-		color: #e1306c;
-	}
+  .LinkedIn:hover {
+    color: #0e76a8;
+  }
+  .Instagram:hover {
+    color: #e1306c;
+  }
 
-	.CV:hover {
-		color: #8e64ff;
-	}
+  .CV:hover {
+    color: #8e64ff;
+  }
 </style>

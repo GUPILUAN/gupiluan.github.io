@@ -1,8 +1,8 @@
 ---
 import "./hero.css";
-import Boton from "../atoms/Boton.astro";
-import { myInfo } from "../../i18n/ui";
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import Boton from "@components/atoms/Boton.astro";
+import { myInfo } from "@i18n/ui";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

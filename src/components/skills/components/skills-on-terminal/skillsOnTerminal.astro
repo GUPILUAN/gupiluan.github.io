@@ -1,70 +1,46 @@
 ---
-import TerminalIcon from '../../atoms/terminal-icon/TerminalIcon.astro';
-import Terminal from '../terminal/Terminal.astro';
-import './skills-on-terminal.css';
-import { getLangFromUrl, useTranslations } from '../../../../i18n/utils';
+import TerminalIcon from "@components/skills/atoms/terminal-icon/TerminalIcon.astro";
+import Terminal from "@components/skills/components/terminal/Terminal.astro";
+import "./skills-on-terminal.css";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
 <Terminal>
-	<div class="terminal__skills">
-		<h2>{t('skills.title.terminal')}</h2>
-		<div class="terminal__skills__container">
-			<TerminalIcon
-				src="/assets/python.svg"
-				color="#306998"
-				name="Python"
-			/>
-			<TerminalIcon src="/assets/java.svg" color="#fff" name="Java" />
+  <div class="terminal__skills">
+    <h2>{t("skills.title.terminal")}</h2>
+    <div class="terminal__skills__container">
+      <TerminalIcon src="/assets/python.svg" color="#306998" name="Python" />
+      <TerminalIcon src="/assets/java.svg" color="#fff" name="Java" />
 
-			<TerminalIcon src="/assets/html.svg" color="#FF4747" name="HTML" />
-			<TerminalIcon
-				src="/assets/javascript.svg"
-				color="#F0DB4F"
-				name="JavaScript"
-			/>
-			<TerminalIcon
-				src="/assets/typescript.svg"
-				color="#007ACC"
-				name="TypeScript"
-			/>
-			<TerminalIcon
-				src="/assets/nodejs.svg"
-				color="#339933"
-				name="NodeJS"
-			/>
-			<TerminalIcon
-				src="/assets/react.svg"
-				color="#00D1FF"
-				name="React"
-			/>
-			<TerminalIcon
-				src="/assets/Astro.svg"
-				color="#FF4747"
-				name="Astro"
-			/>
-			<TerminalIcon src="/assets/css.svg" color="#00A3FF" name="CSS" />
-			<TerminalIcon
-				src="/assets/bootstrap.svg"
-				color="#7738ff"
-				name="Bootstrap"
-			/>
-			<TerminalIcon
-				src="/assets/tailwind.svg"
-				color="#38BDF8"
-				name="TailwindCSS"
-			/>
-			<TerminalIcon
-				src="/assets/mysql.svg"
-				color="#4479A1"
-				name="MySQL"
-			/>
-			<TerminalIcon
-				src="/assets/mongodb.svg"
-				color="#4DB33D"
-				name="MongoDB"
-			/>
-		</div>
-	</div>
+      <TerminalIcon src="/assets/html.svg" color="#FF4747" name="HTML" />
+      <TerminalIcon
+        src="/assets/javascript.svg"
+        color="#F0DB4F"
+        name="JavaScript"
+      />
+      <TerminalIcon
+        src="/assets/typescript.svg"
+        color="#007ACC"
+        name="TypeScript"
+      />
+      <TerminalIcon src="/assets/nodejs.svg" color="#339933" name="NodeJS" />
+      <TerminalIcon src="/assets/react.svg" color="#00D1FF" name="React" />
+      <TerminalIcon src="/assets/Astro.svg" color="#FF4747" name="Astro" />
+      <TerminalIcon src="/assets/css.svg" color="#00A3FF" name="CSS" />
+      <TerminalIcon
+        src="/assets/bootstrap.svg"
+        color="#7738ff"
+        name="Bootstrap"
+      />
+      <TerminalIcon
+        src="/assets/tailwind.svg"
+        color="#38BDF8"
+        name="TailwindCSS"
+      />
+      <TerminalIcon src="/assets/mysql.svg" color="#4479A1" name="MySQL" />
+      <TerminalIcon src="/assets/mongodb.svg" color="#4DB33D" name="MongoDB" />
+    </div>
+  </div>
 </Terminal>
